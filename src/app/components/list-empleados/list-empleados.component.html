@@ -12,6 +12,7 @@
                     <th>Apellido</th>
                     <th>Documento</th>
                     <th>Salario</th>
+                    <th>Salario</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -21,6 +22,7 @@
                     <td>{{ empleado.apellido }}</td>
                     <td>{{ empleado.documento }}</td>
                     <td>{{ empleado.salario | currency }}</td>
+                    <td>{{ '2500' | currency }}</td>
                     <td>
                         <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/edit-empleado/',empleado.id]"></i>
                         <i (click)="eliminarEmpleado(empleado.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
@@ -28,6 +30,8 @@
                   </tr>
                 </tbody>
               </table>
+
+            <!-- <app-responsive-dt></app-responsive-dt> -->
         </div>
     </div>
 </div>

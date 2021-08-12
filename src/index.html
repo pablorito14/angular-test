@@ -8,13 +8,52 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="apple-touch-icon" href="assets/icons/icon-512x512.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <div id="loading">
+      <style scoped>
+          @import url(https://fonts.googleapis.com/css?family=Roboto:100);
+
+          body { 
+            margin-top: 100px; 
+            /* background: #0099F7;  fallback for old browsers */
+            /* background: -webkit-linear-gradient(to right, #D7191E, #1E376D);  Chrome 10-25, Safari 5.1-6 */
+            /* background: linear-gradient(to right, #D7191E, #1E376D); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-color: #007bff; 
+            color: #fff; 
+            text-align:center; }
+
+          h1 {
+            font: 2em 'Roboto', sans-serif;
+            margin-bottom: 40px;
+          }
+
+          #loading {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            -webkit-animation: spin 1s ease-in-out infinite;
+          }
+
+          @keyframes spin {
+            to { -webkit-transform: rotate(360deg); }
+          }
+          @-webkit-keyframes spin {
+            to { -webkit-transform: rotate(360deg); }
+          }
+      </style>
+    </div>
+
+  </app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>

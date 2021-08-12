@@ -1,0 +1,16 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Empleado</th>
+      <th>Salario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data">
+      <td>{{ d.id }}</td>
+      <td>{{ d.nombre+' '+d.apellido }}</td>
+      <td>{{ d.salario | currency }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class EmpleadoService {
+  data:any = {};
+  constructor(private firestore:AngularFirestore) { 
 
-  constructor(private firestore:AngularFirestore) { }
+              }
 
   agregarEmpleado(empleado:any):Promise<any>{
     return this.firestore.collection('empleados').add(empleado);
@@ -29,4 +32,6 @@ export class EmpleadoService {
   actualizarEmpleado(id:string,data:any):Promise<any>{
     return this.firestore.collection('empleados').doc(id).update(data);
   }
+
+  
 }

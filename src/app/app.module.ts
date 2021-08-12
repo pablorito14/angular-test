@@ -12,13 +12,17 @@ import { environment } from '../environments/environment.prod';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResponsiveDtComponent } from './components/responsive-dt/responsive-dt.component';
+import { DataTablesModule } from 'angular-datatables';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListEmpleadosComponent,
     CreateEmpleadoComponent,
-    NavbarComponent
+    NavbarComponent,
+    ResponsiveDtComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFirestoreModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DataTablesModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', {
+      enabled: environment.production
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      // registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
